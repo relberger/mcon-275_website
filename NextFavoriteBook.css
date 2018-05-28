@@ -39,3 +39,11 @@ span
 {
 	    	color: red;
 }
+a:link 
+{
+    color: blue;
+}
+a:hover 
+{
+    color: red;
+}
