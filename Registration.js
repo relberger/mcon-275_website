@@ -1,84 +1,106 @@
 "use strict";
-
-window.onload() = function()
-{
-	$("#username").focus();
-};
-
 $(document).ready(function ()
 {
+	// set focus on load
+	$("#username").focus();
+
+	var isDate = function (date)
+	{
+		if (! /^[01]?\d\/[0-3]\d\/\d{4}$/.test(date))
+		{
+			return false;
+		}
+
+		var index1 = date.indexOf("/");
+		var index2 = date.indexOf("/", index1 + 1);
+		var month = parseInt(date.substring(0, index1));
+		var day = parseInt(date.substring(index1 + 1, index2));
+
+		if (month < 1 || month > 12)
+		{
+			return false;
+		}
+		if (day > 31)
+		{
+			return false;
+		}
+		return true;
+
+	};
+
 	$("#submit").click(function ()
 	{
+		$("span").text("");
+		var isValid = true;
 		var username = $("#username").val();
 		var password1 = $("#password1").val();
 		var password2 = $("#password2").val();
 		var email = $("#email").val();
+		var booksRead = $("#booksRead").val();
+		var booksToRead = $("#booksToRead").val();
 		var dob = $("#dob").val();
-		var isValid = true;
 
-		//validate user entries
-		if (username == "")
+		if (username === "")
 		{
-			$("username").nextElementSibling.firstChild.nodeValue = "Username is required";
 			isValid = false;
+			$("#username").next().text("Please enter a username.");
 		}
-		else if (password1 == "")
+
+		if (password1 === "")
 		{
-			$("password1").nextElementSibling.firstChild.nodeValue = "Password is required";
 			isValid = false;
+			$("#password1").next().text("Please enter a password.");
 		}
-		else if (password2 == "")
+
+		if (password2 === "" || password2 !== password1)
 		{
-			$("password2").nextElementSibling.firstChild.nodeValue = "Please re-enter password";
 			isValid = false;
+			$("#password2").next().text("Passwords must match.");
 		}
-		else if (email == "")
+
+		if (email === "" || ! /^[\w\.\-]+@[\w\.\-]+\.[a-zA-Z]+$/.test(email))
 		{
-			$("email").nextElementSibling.firstChild.nodeValue = "Email address is required";
 			isValid = false;
+			$("#email").next().text("Please enter a valid email.");
 		}
-		else if (dob == "")
+
+		if (dob === "" || !isDate(dob, "full"))
 		{
-			$("dob").nextElementSibling.firstChild.nodeValue = "Date of birth is required";
 			isValid = false;
+			$("#dob").next().text("Please enter a valid date in MM/DD/YYYY format.");
 		}
-		if(isValid == true)
+		var calculateBooks = function (booksRead, booksToRead)
 		{
-			$("#Registration").submit();
+			var books = booksToRead - booksRead;
+			return books;
+		};
+
+		if (booksRead <= booksToRead)
+		{
+			var books = calculateBooks(booksRead, booksToRead);
+			if (books == 1)
+			{
+				alert("We'll help you read " + books + " more book before your goal!");
+			}
+			else
+			{
+				alert("We'll help you read " + books + " more books before your goal!");
+			}
+		}
+		else
+		{
+			$("#booksToRead").next().text("Please enter a number greater than or equal to the previous entry.");
+		}
+
+		//set datepicker
+		$("#datepicker").datepicker(
+		{
+			minDate: new Date()
+		});
+		
+		if (isValid === true)
+		{
+			$("#registration_form").submit();
 		}
 	});
-}
-/*
- var submit = function() {
- var emailAddress1 = $(#"email_address1").value;
- var emailAddress2 = $("email_address2").value;
- var firstName = $("first_name").value;
- var isValid = true;
-
- // validate the entries
- if (emailAddress1 == "") {
- $("email_address1").nextElementSibling.firstChild.nodeValue = "First email address entry required";
- isValid = false;
- } else if (emailAddress2 == "") {
- $("email_address2").nextElementSibling.firstChild.nodeValue = "Second email address entry required";
- isValid = false;
- } else if (emailAddress2 != emailAddress1) {
- $("email_address2").nextElementSibling.firstChild.nodeValue = "Email address entries must match";
- isValid = false;
- } else if (firstName == "") {
- $("first_name").nextElementSibling.firstChild.nodeValue = "First name entry required";
- isValid = false;
- }
-
- // submit the form if all entries are valid
- // otherwise, display an error message
- if (isValid == true) {
- $("email_form").submit();
- }
- };
-
- window.onload = function() {
- $("join_list").onclick = joinList;
- $("email_address1").focus();
- };*/
-
+});

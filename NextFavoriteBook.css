@@ -11,6 +11,13 @@ h2
 {
 	    	color: #283e3e;
 }
+h4
+{
+		    color: #283e3e;
+		    font-weight: bold;
+		    width: 30em;
+		    text-align: right;
+} 
 p
 {
 	    	color: #283e3e;
@@ -18,7 +25,7 @@ p
 label
 {
 	    	float: left;
-	    	width: 11em;
+	    	width: 30em;
 	    	text-align: right;
 }
 input
