@@ -1,0 +1,45 @@
+#carousel
+{
+	    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button_panel	
+{
+	    max-height: 500px;
+	    padding: 250px 15px;
+	    float: left;
+}
+.button_panel img 
+{
+	    max-width: 25px;
+	    max-height: 25px;
+    resize: both;
+    position: absolute;
+}
+#display 
+{
+	    max-height: 500px;
+	    max-width: 85%;
+	    overflow: hidden;
+	    float: left;
+    position: relative;
+}
+#images 
+{
+	    padding-left: 20px;
+	    position: relative;   
+    width: 2700px;
+    list-style: none;  
+}
+#images li	
+{
+	    float: left;
+	    width: 330px;
+	    height: 500px;
+}
+#images li img	
+{
+    width: 330px;
+    height: 500px;
+	}

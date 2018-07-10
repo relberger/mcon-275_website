@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<head>
+	<meta charset = "UTF-8">
+	<title>The Book King | Home</title>
+	<link rel="stylesheet" href="../theBookKing.css">
+	<link rel="stylesheet" href="carousel.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="homepage.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div id="container">
+<!--header-->
+		<div class="header">
+			<a href="homepage.html">
+				<img src="../logo.png" alt=""></a>
+		</div>
+		
+<!--menu-->		
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span> 
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li><a href="../aboutUs.html">About Us</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Genres<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li class="dropdown-submenu">
+								<a class="test" tabindex="-1" href="#">Drama<span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a tabindex="-1" href="../shells/dramaBooks.html">Books</a></li>
+									<li><a tabindex="-1" href="../shells/dramaAuthors.html">Authors</a></li>
+								</ul>
+								</li>
+								<li class="dropdown-submenu">
+									<a class="test" tabindex="-1" href="#">Religion<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a tabindex="-1" href="../shells/religionBooks.html">Books</a></li>
+										<li><a tabindex="-1" href="../shells/religionAuthors.html">Authors</a></li>
+									</ul>
+								</li>
+								<li class="dropdown-submenu">
+									<a class="test" tabindex="-1" href="#">Children's<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a tabindex="-1" href="../shells/childrensBooks.html">Books</a></li>
+										<li><a tabindex="-1" href="../shells/childrensAuthors.html">Authors</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="../faq/faq.html">FAQ</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="../registration/registration.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						<li><a href="../shells/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<h1>The King of All Book Review Websites</h1>
+		<div>
+			<h2>Featured Books</h2>
+				<div id="carousel">
+		        <div id="leftButton" class="button_panel"><img src="../images/left.jpg" alt=""></div>
+				<div id="display">
+					<ul id="images">
+						<li><a href="../books/theKiteRunner.html">
+							<img src="../images/theKiteRunner.jpg" alt=""></a></li>
+						<li><a href="../books/frindle.html">
+							<img src="../images/frindle.jpg" alt=""></a></li>
+						<li><a href="../books/prideAndPrejudice.html">
+							<img src="../images/prideAndPrejudice.jpg" alt=""></a></li>
+						<li><a href="../books/halakhicMan.html">
+							<img src="../images/halakhicMan.jpg" alt=""></a></li>
+						<li><a href="../books/theAnybodies.html">
+							<img src="../images/theAnybodies.jpg" alt=""></a></li>
+						<li><a href="../books/theGreatPartnership.html">
+							<img src="../images/theGreatPartnership.jpg" alt=""></a></li>
+						<li><a href="../books/theHelp.html">
+							<img src="../images/theHelp.jpg" alt=""></a></li>
+						<li><a href="../books/thePhantomTollbooth.html">
+							<img src="../images/thePhantomTollbooth.jpg" alt=""></a></li>					
+					</ul>
+				</div>
+		        <div id="rightButton" class="button_panel"><img src="../images/right.jpg" alt=""></div>
+			</div>
+		</div>
+		<div id="nytList">
+			<h2>This week's book recommendations from the New York Times Best Sellers List: </h2>
+			<span id="bestSeller"> </span>
+		</div>		
+	</div>
+<!--footer-->
+	<div>
+		<div class="footer"></div>
+	</div>
+</body>
